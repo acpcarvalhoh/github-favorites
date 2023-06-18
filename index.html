@@ -9,6 +9,82 @@
     <title>Favoritos do GitHub</title>
 </head>
 <body>
-    
+    <div id="app">
+        <header>
+            <h1>
+                <img src="assets/Gitfav.svg" alt="">
+            </h1>
+            <div class="search" data-id="github-search">
+                <label for="github-user" class="sr-only">Usuário do GitHub</label>
+                <input id="github-user" 
+                   type="text" 
+                   placeholder="Digite o Github username que quer favoritar"
+                />
+
+                <button>
+                    <img src="assets/star.svg" alt="imagem de estrela">
+                    favoritar
+                </button>
+            </div>
+        </header>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuário</th>
+                    <th>Repositórios</th>
+                    <th>Seguidores</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td class="users">
+                        <img src="https://github.com/acpcarvalhoh.png" alt="imagem do Adão">
+                        <a href="https://github.com/acpcarvalhoh" target="_blank">
+                            <p>Adão Carvalho</p>
+                            <span>/acpcarvalhoh</span>
+                        </a>
+                    </td>
+                    <td class="repositories">
+                        21
+                    </td>
+                    <td class="folowers">
+                        5
+                    </td>
+                    <td>
+                        <button class="remove">Remover</button>
+                    </td>
+                
+                </tr>
+
+                <tr>
+                    <td class="users">
+                        <img src="https://github.com/acpcarvalhoh.png" alt="imagem do Adão">
+                        <a href="https://github.com/acpcarvalhoh" target="_blank">
+                            <p>Adão Carvalho</p>
+                            <span>/acpcarvalhoh</span>
+                        </a>
+                    </td>
+
+                    <td>
+                        
+                    </td>
+                    <td class="repositories">
+                        21
+                    </td>
+                    <td class="folowers">
+                        5
+                    </td>
+                    <td>
+                        <button class="remove">Remover</button>
+                    </td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

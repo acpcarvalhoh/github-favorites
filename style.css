@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --ff-primary: 'Roboto', sans-serif;
+    --tx-color: #E1E1E6;
+}
+
+body{
+    background: black;
+    font-size: 1.6rem;
+}
+
+body * {
+    font-family: var(--ff-primary);
+}
+
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+#app{
+    max-width: 1120px;
+    margin: 11.5rem auto;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8.7rem;
+}
+
+header .search{
+    display: flex;
+    gap: 8px;
+    
+}
+
+.search input{
+    width: 462px;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 100%;
+    color: #fff;
+    background: #06181C;
+    border:  none;
+    border-radius: 5px;
+    padding: 1.2rem 3.2rem;
+}
+
+.search input::placeholder{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 100%;
+    color: #7C7C8A;
+}
+
+header button{
+    padding: 1.2rem 3.2rem;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-transform: uppercase;
+    border: none;
+    background: #065E7C;
+    color: #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+
+header button:hover{
+    background: #FFFFFF;
+    color: #065E7C;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    
+}
+
+table * {
+    font-size: 2rem;
+    color: var(--tx-color);
+}
+
+table th{
+    background:  #092D38;
+    padding: 1.6rem;
+}
+
+table th:first-child{
+    text-align: left;
+    
+}
+
+table td:first-child{
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid #4A808C;
+}
+
+table td{
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #4A808C;
+}
+
+table tr:nth-child(odd){
+    background: hsla(195, 61%, 6%, 0.5);
+}
+
+table tr{
+    background-color: #06181C;
+}
+
+td.users{
+    vertical-align: middle;
+}
+
+td.users img{
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+td.users a{
+    text-decoration: none;
+}
+
+td.users span{
+    color: #d2d2de;
+}
+
+td .remove{
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition-duration: .2s;
+    color: red;
+
+}
+
+
+
+
+
