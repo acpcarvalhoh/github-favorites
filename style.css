@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&family=Roboto:wght@400;700&display=swap');
 
 *{
     padding: 0;
@@ -37,6 +37,10 @@ body * {
 #app{
     max-width: 1120px;
     margin: 11.5rem auto;
+}
+
+.hidden{
+    display: none;
 }
 
 header{
@@ -94,15 +98,19 @@ header button:hover{
     color: #065E7C;
 }
 
+.table-content{
+    border: 1px solid #4A808C;
+    border-radius: 1.2rem;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
 
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
+    -webkit-border-radius: 1.2rem;
+    -moz-border-radius:  1.2rem;
+    border-radius:  1.2rem;
     overflow: hidden;
-    
 }
 
 table * {
@@ -117,20 +125,23 @@ table th{
 
 table th:first-child{
     text-align: left;
-    
 }
 
 table td:first-child{
     padding: 1.5rem;
     text-align: left;
-    border-bottom: 1px solid #4A808C;
 }
 
 table td{
     padding: 1.5rem;
     text-align: center;
-    border-bottom: 1px solid #4A808C;
 }
+
+table td:last-child{
+    text-align: center;
+    padding-left: 50px;
+}
+
 
 table tr:nth-child(odd){
     background: hsla(195, 61%, 6%, 0.5);
@@ -142,6 +153,7 @@ table tr{
 
 td.users{
     vertical-align: middle;
+    position: relative;
 }
 
 td.users img{
@@ -153,6 +165,9 @@ td.users img{
 
 td.users a{
     text-decoration: none;
+    position: absolute;
+    top: 20px;
+    left: 85px;
 }
 
 td.users span{
@@ -165,8 +180,22 @@ td .remove{
     cursor: pointer;
     transition-duration: .2s;
     color: red;
-
 }
+
+.empty-fav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    height: 250px;
+}
+
+.empty-fav h2{
+    font: 700 4rem 'Roboto Mono', monospace;
+    color: #4E5455;
+    line-height: 25px;
+}
+
 
 
 
