@@ -48,16 +48,17 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 8.7rem;
+    gap: 1.5rem;
 }
 
 header .search{
     display: flex;
     gap: 8px;
-    
+    width: 640px;
 }
 
 .search input{
-    width: 462px;
+    width: 100%;
     font-weight: 400;
     font-size: 1.6rem;
     line-height: 100%;
@@ -92,6 +93,8 @@ header button{
     cursor: pointer;
     transition-duration: .4s;
 }
+
+
 
 header button:hover{
     background: #FFFFFF;
