@@ -1,28 +1,6 @@
-class GitHubUser {
+import { GitHubUser } from "./github.user.js"
 
-    static search(username){
-        const endpoit = `https://api.github.com/users/${username}`
-
-        return fetch((endpoit))
-        .then(data => data.json())
-        .then(({login, name, public_repos, followers}) => ({
-
-            login,
-            name,
-            public_repos,
-            followers
-
-        }))
-
-    } 
-
-        
-}
-
-// classe que vai conter a lógica dos dados
-// como os dados seram estruturados
-
-
+// classe que contem a lógica dos dados
 export class Favorites{
    constructor(root){
     this.root = document.querySelector(root)
@@ -105,7 +83,6 @@ export class FavoritesView extends Favorites{
 
 
         const imgStar = this.root.querySelector('.add-favorite img');
-
         addButton.onmouseover = () => {
             imgStar.src = 'assets/star-blue.svg';
         };
@@ -122,6 +99,7 @@ export class FavoritesView extends Favorites{
     update(){
         this.removeAlltr()
        
+        this.emptyRow()
 
         this.users.forEach(user => {
             const row = this.createRow()
@@ -130,8 +108,9 @@ export class FavoritesView extends Favorites{
             row.querySelector('.users img').alt = `Imagem de ${user.name}`
             row.querySelector('.users a').href = `https://github.com/${user.login}`
             row.querySelector('.users a p').textContent = user.name
+            row.querySelector('.users a span').textContent = user.login
             row.querySelector('.repositories').textContent = user.public_repos
-            row.querySelector('.folowers').textContent = user.folowers
+            row.querySelector('.folowers').textContent = user.followers
 
             row.querySelector('.remove').onclick = () => {
                 const isOK = confirm("Tem certeza que quer remover esse favorito?");
@@ -140,7 +119,6 @@ export class FavoritesView extends Favorites{
                 }
             };
             
-
 
             this.tbody.append(row)
 
@@ -154,11 +132,13 @@ export class FavoritesView extends Favorites{
         tr.innerHTML = `
         
             <td class="users">
-                <img src="https://github.com/acpcarvalhoh.png" alt="imagem do Adão">
-                <a href="https://github.com/acpcarvalhoh" target="_blank">
-                    <p>Adão Carvalho</p>
-                    <span>/acpcarvalhoh</span>
-                </a>
+                <div class="user">
+                    <img src="https://github.com/acpcarvalhoh.png" alt="imagem do Adão">
+                    <a href="https://github.com/acpcarvalhoh" target="_blank">
+                        <p>Adão Carvalho</p>
+                        <span>/acpcarvalhoh</span>
+                    </a>
+                </div>
             </td>
 
             <td class="repositories">
@@ -174,10 +154,27 @@ export class FavoritesView extends Favorites{
             </td>
         
         `
+
         return tr
+
     }
 
+    emptyRow(){
+        if (this.users.length === 0) {
+            const emptyRow = document.createElement('tr');
+            emptyRow.innerHTML = `
+                <td colspan="4">
+                    <div class="empty-fav">
+                        <img src="assets/Estrela.svg" alt="imagem de estrela">
+                        <h2>Nenhum favorito ainda</h2>
+                    </div>
+                </td>
+            `;
 
+
+            this.tbody.append(emptyRow);
+        }
+    }
 
     removeAlltr(){
         
