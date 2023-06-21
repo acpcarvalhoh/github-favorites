@@ -39,10 +39,6 @@ body * {
     margin: 11.5rem auto;
 }
 
-.hidden{
-    display: none;
-}
-
 header{
     display: flex;
     justify-content: space-between;
@@ -114,6 +110,11 @@ table{
     -moz-border-radius:  1.2rem;
     border-radius:  1.2rem;
     overflow: hidden;
+}
+
+tbody {
+    max-height: 300px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Habilita a rolagem vertical quando o conteúdo excede a altura máxima */
 }
 
 table * {
@@ -198,6 +199,7 @@ td .remove{
     color: #4E5455;
     line-height: 25px;
 }
+
 
 
 
